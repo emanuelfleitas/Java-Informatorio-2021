@@ -11,12 +11,16 @@ public class App {
         List<Integer> palabras = List.of(1,2,4,4,4);
         List<Integer> palabrasNoRepetidas = new ArrayList<Integer>();
         palabrasNoRepetidas = palabras.stream().distinct().collect(Collectors.toList());
+        System.out.println("Valores no repetidos "+palabrasNoRepetidas );
 
-        List<Integer> factoriales = new ArrayList<Integer>();
+        List<Integer> factoriales = palabrasNoRepetidas.stream().map(p ->(int)factorial(p)).collect(Collectors.toList());
+
+        System.out.println("Factoriales: "+factoriales);
+      /*   List<Integer> factoriales = new ArrayList<Integer>();
         for (Integer palabra : palabrasNoRepetidas) {
             factoriales.add(factorial((int)palabra));
         }
-        System.out.println(factoriales);
+        System.out.println(factoriales); */
     }
     public static int factorial(int num){
         int resultado = 1;

@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 
+
 public class App {
     public static void main(String[] args) throws Exception {
         /* Se posee una Lista con objetos de clase Alumno con los atributos: apellido, nombre y fechaDeNacimiento (con tipos: String, String 
@@ -27,13 +28,12 @@ public class App {
         alumnos.add(new Alumno("Ema","Romero",ParseFecha("23/11/1994")));
         alumnos.add(new Alumno("Lucia","Romero",ParseFecha("23/11/1990")));
         alumnos.add(new Alumno("Richard","Romero",ParseFecha("23/11/2000"))); 
-        Map<String, Integer> mapAlumnos= new HashMap<String, Integer>();
-
+         Map<String, Integer> mapAlumnos= new HashMap<String, Integer>(); 
 
         for (Alumno alumno : alumnos) {
             mapAlumnos.put(alumno.getApellido()+" "+alumno.getNombre(),años(alumno.getNacimiento()));
         }
-        System.out.println(mapAlumnos);
+        System.out.println(mapAlumnos); 
     }
 
     public static  Date ParseFecha(String fecha) throws ParseException{
